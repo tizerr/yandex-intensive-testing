@@ -12,7 +12,7 @@ export const Delivery: React.FC = () => {
             <Helmet title="Delivery" />
             <div className="row">
                 <div className="col">
-                    <h1>Delivery</h1>
+                    <h1 data-testid='hasPage'>Delivery</h1>
                     <p>
                         Deserunt occaecati tempora. Qui occaecati est aliquam. Enim qui nulla ipsam.
                         Incidunt impedit enim consequuntur amet at consequuntur vero.

@@ -21,6 +21,11 @@ const config: webpack.Configuration = {
     module: {
         rules: [
             {
+                test: /\.(js|jsx)$/i,
+                loader: 'babel-loader',
+                exclude: ['/node_modules/'],
+            },
+            {
                 test: /\.(ts|tsx)$/i,
                 loader: 'ts-loader',
                 exclude: ['/node_modules/'],

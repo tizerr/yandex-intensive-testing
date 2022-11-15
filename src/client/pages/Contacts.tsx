@@ -10,7 +10,7 @@ export const Contacts: React.FC = () => {
             <Helmet title="Contacts" />
             <div className="row">
                 <div className="col">
-                    <h1>Contacts</h1>
+                    <h1 data-testid='hasPage'>Contacts</h1>
 
                     <p>
                         Ut non consequatur aperiam ex dolores. Voluptatum harum consequatur est totam. Aut voluptatum aliquid aut optio et ea.

@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
             <Helmet title="Welcome" />
             <div className="row">
                 <div className="col bg-secondary text-white py-4 bg-opacity-75">
-                    <p className="display-3">Welcome to Example store!</p>
+                    <p className="display-3" data-testid='hasPage'>Welcome to Example store!</p>
                     <p className="lead">
                         Culpa perspiciatis corporis facilis fugit similique
                     </p>

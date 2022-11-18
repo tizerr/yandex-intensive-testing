@@ -1,19 +1,6 @@
 const { assert } = require('chai');
 
 describe('Общие требования:', async () => {
-    it('вёрстка должна адаптироваться под ширину экрана', async function({browser}) {
-        await browser.url('/hw/store/');
-        await browser.setWindowSize(1920, 1080);
-
-        const a = await browser.$('.Application');
-        await a.waitForExist();
-        await browser.assertView('plain', '.Application', {
-            compositeImage: true,
-        });
-
-        // assert.equal('', '');
-
-    });
 
     it('название магазина в шапке должно быть ссылкой на главную страницу', async function({browser}) {
         await browser.url('/hw/store/catalog');

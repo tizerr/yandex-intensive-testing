@@ -12,5 +12,5 @@ const bem = cn('CartBadge');
 export const CartBadge: React.FC<CartBadgeProps> = ({ id }) => {
     const cart = useSelector((s: ApplicationState) => s.cart);
 
-    return cart[id] ? <span className={bem(null, ['text-success', 'mx-3'])}>Item in cart</span> : null;
+    return cart[id] ? <span data-testid='cartBadge' className={bem(null, ['text-success', 'mx-3'])}>Item in cart</span> : null;
 }

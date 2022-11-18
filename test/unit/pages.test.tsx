@@ -10,14 +10,15 @@ import {Catalog} from "../../src/client/pages/Catalog";
 import {Delivery} from "../../src/client/pages/Delivery";
 import {Contacts} from "../../src/client/pages/Contacts";
 
-describe('Pages', () => {
-    const basename = '/hw/store';
+const basename = '/';
 
-    const api = new ExampleApi(basename);
-    const cart = new CartApi();
-    const store = initStore(api, cart);
+const api = new ExampleApi(basename);
+const cart = new CartApi();
+const store = initStore(api, cart);
 
-    it('has main page', () => {
+describe('в магазине должны быть страницы: главная, каталог, условия доставки, контакты:', () => {
+
+    it('главная', () => {
         const application = (
             <BrowserRouter basename={basename}>
                 <Provider store={store}>
@@ -31,7 +32,7 @@ describe('Pages', () => {
         expect(getByTestId('hasPage').textContent).toBe('Welcome to Example store!');
     });
 
-    it('has catalog page', () => {
+    it('каталог', () => {
         const application = (
             <BrowserRouter basename={basename}>
                 <Provider store={store}>
@@ -45,7 +46,7 @@ describe('Pages', () => {
         expect(getByTestId('hasPage').textContent).toBe('Catalog');
     });
 
-    it('has delivery page', () => {
+    it('условия доставки', () => {
         const application = (
             <BrowserRouter basename={basename}>
                 <Provider store={store}>
@@ -59,7 +60,7 @@ describe('Pages', () => {
         expect(getByTestId('hasPage').textContent).toBe('Delivery');
     });
 
-    it('has contacts page', () => {
+    it('контакты', () => {
         const application = (
             <BrowserRouter basename={basename}>
                 <Provider store={store}>

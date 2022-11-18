@@ -33,10 +33,10 @@ export const Cart: React.FC = () => {
             return (
                 <tr key={id} data-testid={id}>
                     <th className={bem('Index')} scope="row">{index + 1}</th>
-                    <td className={bem('Name')}>{item.name}</td>
-                    <td className={bem('Price')}>${item.price}</td>
-                    <td className={bem('Count')}>{item.count}</td>
-                    <td className={bem('Total')}>${item.count * item.price}</td>
+                    <td data-testid='name' className={bem('Name')}>{item.name}</td>
+                    <td data-testid='price' className={bem('Price')}>${item.price}</td>
+                    <td data-testid='count' className={bem('Count')}>{item.count}</td>
+                    <td data-testid='total' className={bem('Total')}>${item.count * item.price}</td>
                 </tr>
             );
         });
@@ -44,7 +44,7 @@ export const Cart: React.FC = () => {
         const total = Object.values(cart).reduce((sum, { count, price }) => sum + count * price, 0);
 
         content = (
-            <table className={bem('Table', ['table'])}>
+            <table data-testid='cartTable' className={bem('Table', ['table'])}>
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -60,7 +60,7 @@ export const Cart: React.FC = () => {
                 <tfoot>
                     <tr>
                         <td colSpan={4}>Order price:</td>
-                        <td className={bem('OrderPrice')}>${total}</td>
+                        <td data-testid='cartTotal' className={bem('OrderPrice')}>${total}</td>
                     </tr>
                 </tfoot>
             </table>
@@ -68,7 +68,7 @@ export const Cart: React.FC = () => {
     } else {
         content = (
             <>
-                Cart is empty. Please select products in the <Link to="/catalog">catalog</Link>.
+                Cart is empty. Please select products in the <Link data-testid="emptyLink" to="/catalog">catalog</Link>.
             </>
         );
     }

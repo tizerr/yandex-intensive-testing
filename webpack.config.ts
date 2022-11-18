@@ -1,6 +1,8 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
+// @ts-ignore
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+// @ts-ignore
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const isProduction = process.env.NODE_ENV == 'production';
@@ -20,11 +22,6 @@ const config: webpack.Configuration = {
     ],
     module: {
         rules: [
-            {
-                test: /\.(js|jsx)$/i,
-                loader: 'babel-loader',
-                exclude: ['/node_modules/'],
-            },
             {
                 test: /\.(ts|tsx)$/i,
                 loader: 'ts-loader',
